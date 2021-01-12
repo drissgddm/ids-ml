@@ -1,0 +1,9 @@
+.vscode
+.idea
+data
+.ipynb_checkpoints
+
+__pycache__
+.pytest_cache
+*.pyc
+*.zip
