@@ -1,7 +1,7 @@
 """ models.b_random.py
 Model class: RandomBaseline
 """
-from datamodels.metric import Model
+from datamodels.model import Model
 
 from random import randint
 

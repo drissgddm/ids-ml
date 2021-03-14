@@ -1,7 +1,7 @@
 """ models.b_procedural.py
 Model class: ProceduralBaseline1, ProceduralBaseline2, ProceduralBaseline3
 """
-from datamodels.metric import Model
+from datamodels.model import Model
 
 from random import randint
 

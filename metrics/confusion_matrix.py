@@ -17,13 +17,13 @@ class ConfusionMatrix(Metric):
     def __init__(self):
         super().__init__(name="Confusion Matrix", type="Multiclassification Evaluation")
 
-    def evaluate(self, Y_true, Y_predicted, normalize="true", labels=None):
+    def evaluate(self, Y_true, Y_predicted, normalize="true", labels=[]):
         """Compute the confusion matrix
         :returns: a ndarray of shape (n_classes, n_classes)
         """
         return confusion_matrix(Y_true, Y_predicted, normalize=normalize, labels=labels)
 
-    def plot(self, Y_true, Y_predicted, normalize="true", labels=None):
+    def plot(self, Y_true, Y_predicted, normalize="true", labels=[]):
         fig, ax = plt.subplots(figsize=(16, 12))
         heatmap(
             self.evaluate(Y_true, Y_predicted, normalize=normalize, labels=labels),
