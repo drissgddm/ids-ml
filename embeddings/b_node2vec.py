@@ -15,7 +15,7 @@ class Node2VecBaseline(Embedding):
 
     @classmethod
     def from_networkx_graph(
-        cls, networkx_graph, dimensions=1000, walk_length=10, num_walks=100
+        cls, networkx_graph, dimensions=1000, walk_length=10, num_walks=100, p=1, q=1
     ):
         return cls(
             Node2Vec(
@@ -23,6 +23,8 @@ class Node2VecBaseline(Embedding):
                 dimensions=dimensions,
                 walk_length=walk_length,
                 num_walks=num_walks,
+                p=p,
+                q=q,
             )
         )
 
