@@ -28,13 +28,18 @@ class Multigraph(Graph):
         )
 
     def add_edges(self, edges_df):
+        _labels_color_map = {
+            0: "#299e50",
+            1: "##1900ff",
+            2: "#ff0000",
+            3: "#fff700",
+            4: "#1500ff",
+        }
         for e in edges_df.to_dict("records"):
             for w in ["DURATION", "PACKETS", "BYTES", "SPEED"]:
                 self._G.add_weighted_edges_from(
                     [(e["SRC"], e["DST"], e[w])],
-                    color={0: "#299e50", 1: "#ff0000", 2: "#ff0000"}.get(
-                        e["ATTACK_TYPE"], "#000000"
-                    ),
+                    color=_labels_color_map.get(e["ATTACK_TYPE"], "#000000"),
                 )
 
     def plot(self, width=1100, height=900):
