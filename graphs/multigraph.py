@@ -30,7 +30,7 @@ class Multigraph(Graph):
     def add_edges(self, edges_df):
         _labels_color_map = {
             0: "#299e50",
-            1: "##1900ff",
+            1: "#1900ff",
             2: "#ff0000",
             3: "#fff700",
             4: "#1500ff",
